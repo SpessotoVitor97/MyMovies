@@ -58,6 +58,7 @@ class MoviesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MovieTableViewCell
         guard let movie = fetchedResultsController?.object(at: indexPath) else { return cell }
+        movies.append(movie)
         
         cell.ivMovie.image = movie.image as? UIImage
         cell.lbTitle.text = movie.title
